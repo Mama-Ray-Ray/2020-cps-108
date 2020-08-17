@@ -1,2 +1,1 @@
-# 2020-cps-108
-2020 Autumn CPS 108
+# Welcome to the CPS-108 code repository
