@@ -49,23 +49,28 @@ G4 = 392
 E5 = 659
 F5 = 698
 
+drum_intro = []
+drum_intro.extend(high_hat(12000))
+drum_intro.extend(high_hat(3000))
+drum_intro.extend(high_hat(12000))
+drum_intro.extend(high_hat(3000))
+
 samples = []
+samples.extend(drum_intro)
 
-for i in range(4):              # throw in a little drum intro
-    samples.extend(high_hat(12000))
-    samples.extend(high_hat(3000))
-
-samples.extend(mix(synth(4000, C5), high_hat(12000)))
-samples.extend(mix(synth(4000, C5), high_hat(3000)))
-samples.extend(mix(synth(4000, B4b), high_hat(12000)))
-samples.extend(mix(synth(4000, C5), high_hat(3000)))
-samples.extend(mix(synth(0, C5), high_hat(12000)))
-samples.extend(mix(synth(4000, G4), high_hat(3000)))
-samples.extend(mix(synth(0, C5), high_hat(12000)))
-samples.extend(mix(synth(4000, G4), high_hat(3000)))
-samples.extend(mix(synth(4000, C5), high_hat(12000)))
-samples.extend(mix(synth(4000, F5), high_hat(3000)))
-samples.extend(mix(synth(4000, E5), high_hat(12000)))
-samples.extend(mix(synth(4000, C5), high_hat(3000)))
+for i in range(2):              # throw in a little drum intro
+    samples.extend(drum_intro)
+    samples.extend(mix(synth(4000, C5), high_hat(12000)))
+    samples.extend(mix(synth(4000, C5), high_hat(3000)))
+    samples.extend(mix(synth(4000, B4b), high_hat(12000)))
+    samples.extend(mix(synth(4000, C5), high_hat(3000)))
+    samples.extend(mix(synth(0, C5), high_hat(12000)))
+    samples.extend(mix(synth(4000, G4), high_hat(3000)))
+    samples.extend(mix(synth(0, C5), high_hat(12000)))
+    samples.extend(mix(synth(4000, G4), high_hat(3000)))
+    samples.extend(mix(synth(4000, C5), high_hat(12000)))
+    samples.extend(mix(synth(4000, F5), high_hat(3000)))
+    samples.extend(mix(synth(4000, E5), high_hat(12000)))
+    samples.extend(mix(synth(4000, C5), high_hat(3000)))
 
 w.writeframes(struct.pack('<' + 'h' * len(samples), *samples))

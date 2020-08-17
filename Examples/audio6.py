@@ -16,15 +16,21 @@ def play_note(w, volume, frequency):
         for j in range(width):
             w.writeframes(struct.pack('<h', -amplitude))
 
-play_note(w, 4000, 523)
-play_note(w, 4000, 523)
-play_note(w, 4000, 466)
-play_note(w, 4000, 523)
-play_note(w, 0, 523)
-play_note(w, 4000, 392)
-play_note(w, 0, 523)
-play_note(w, 4000, 392)
-play_note(w, 4000, 523)
-play_note(w, 4000, 698)
-play_note(w, 4000, 659)
-play_note(w, 4000, 523)
+C5 = 523
+B4b = 466
+G4 = 392
+E5 = 659
+F5 = 698
+
+play_note(w, 4000, C5)
+play_note(w, 4000, C5)
+play_note(w, 4000, B4b)
+play_note(w, 4000, C5)
+play_note(w, 0, C5)
+play_note(w, 4000, G4)
+play_note(w, 0, C5)
+play_note(w, 4000, G4)
+play_note(w, 4000, C5)
+play_note(w, 4000, F5)
+play_note(w, 4000, E5)
+play_note(w, 4000, C5)

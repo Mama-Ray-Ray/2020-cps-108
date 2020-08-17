@@ -6,12 +6,14 @@ w.setnchannels(1)
 w.setsampwidth(2)
 w.setframerate(44100)
 
-for i in range(5000):
+for i in range(4000):
+    w.writeframes(struct.pack('<h', 4000))
     w.writeframes(struct.pack('<h', 4000))
     w.writeframes(struct.pack('<h', 4000))
     w.writeframes(struct.pack('<h', 4000))
     w.writeframes(struct.pack('<h', 4000))
 
+    w.writeframes(struct.pack('<h', -4000))
     w.writeframes(struct.pack('<h', -4000))
     w.writeframes(struct.pack('<h', -4000))
     w.writeframes(struct.pack('<h', -4000))
