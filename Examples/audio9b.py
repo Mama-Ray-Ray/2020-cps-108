@@ -2,11 +2,6 @@ from random import random, randrange
 import struct
 import wave
 
-w = wave.open('music.wav', 'wb')
-w.setnchannels(1)
-w.setsampwidth(2)
-w.setframerate(44100)
-
 def square_wave(volume, frequency):
     samples = []
     waveforms = frequency // 4
@@ -73,4 +68,8 @@ for i in range(2):              # throw in a little drum intro
     samples.extend(mix(synth(4000, E5), high_hat(12000)))
     samples.extend(mix(synth(4000, C5), high_hat(3000)))
 
+w = wave.open('music.wav', 'wb')
+w.setnchannels(1)
+w.setsampwidth(2)
+w.setframerate(44100)
 w.writeframes(struct.pack('<' + 'h' * len(samples), *samples))
