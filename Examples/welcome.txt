@@ -1,0 +1,9 @@
+
+Welcome to CPS-108!
+
+• Moodle is the course’s front page
+• Check out the syllabus
+• Tools:
+    Python 3.8
+    VS Code
+    git
